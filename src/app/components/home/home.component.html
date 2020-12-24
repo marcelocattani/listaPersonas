@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="container">
+    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
+
+        <ngb-panel [title]="persona.name +' '+ persona.lastName" *ngFor="let persona of this.info.personas">
+            <ng-template ngbPanelContent>
+                <p> Edad: {{persona.edad}} </p>
+                <p>Biografía : {{persona.biography}} </p>
+                <p>Teléfonos</p>
+                <ul>
+                    <li *ngFor="let telefono of persona.telefonos">
+                        {{telefono}}
+                    </li>
+                </ul>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>

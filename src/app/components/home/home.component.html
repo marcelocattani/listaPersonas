@@ -1,17 +1,32 @@
 <div class="container">
-    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
 
-        <ngb-panel [title]="persona.name +' '+ persona.lastName" *ngFor="let persona of this.info.personas">
-            <ng-template ngbPanelContent>
-                <p> Edad: {{persona.edad}} </p>
-                <p>Biografía : {{persona.biography}} </p>
-                <p>Teléfonos</p>
-                <ul>
-                    <li *ngFor="let telefono of persona.telefonos">
-                        {{telefono}}
-                    </li>
-                </ul>
-            </ng-template>
-        </ngb-panel>
-    </ngb-accordion>
+    <div class="informacion">
+        <p>
+            <b>CATTANI, Marcelo Omar</b> DNI: <span>40 596 712</span>
+        </p>
+        <p>
+            Técnico Universitario en Programación - Universidad Tecnológica Nacional
+        </p>
+
+    </div>
+
+    <div class="animate__animated animate__fadeInDown">
+        <ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
+
+            <ngb-panel [title]="persona.name +' '+ persona.lastName" *ngFor="let persona of this.info.personas"
+                class="titulo">
+                <ng-template ngbPanelContent>
+                    <p> Edad: {{persona.edad}} años </p>
+                    <p>Biografía : {{persona.biography}} </p>
+                    <p>Teléfonos</p>
+                    <ul>
+                        <li *ngFor="let telefono of persona.telefonos">
+                            {{telefono}}
+                        </li>
+                    </ul>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
+
 </div>
